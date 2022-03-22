@@ -1,0 +1,25 @@
+.detail-forecast {
+  padding: 10px 20px;
+}
+.temperature {
+  text-decoration: none;
+  color: white;
+}
+.forecast-heading {
+  text-align: left;
+}
+.forecast-temperature {
+  font-size: 20px;
+}
+.icon-forecast {
+  color: white;
+  font-size: 40px;
+  line-height: 48px;
+}
+#forecast-description::first-letter {
+  text-transform: capitalize;
+}
+#forecast-description {
+  font-weight: 600;
+  font-size: 18px;
+}

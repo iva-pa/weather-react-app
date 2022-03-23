@@ -1,8 +1,16 @@
 import React from "react";
 import image01d from "./images/01d.png";
 import "./CurrentWeather.css";
+import axios from "axios";
 
 export default function CurrentWeather() {
+  function handleResponse(response) {
+    console.log(response.data);
+  }
+  const apiKey = "bd2d78faf9d1acb5b346a3bce88defb1";
+  let city = "London";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
   return (
     <div>
       <div className="Search">

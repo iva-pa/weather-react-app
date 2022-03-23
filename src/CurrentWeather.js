@@ -3,16 +3,24 @@ import image01d from "./images/01d.png";
 import "./CurrentWeather.css";
 import axios from "axios";
 
-export default function CurrentWeather() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState("");
+export default function CurrentWeather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
-    setReady(true);
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      iconUrl: image01d,
+      date: "Sunday, February 27",
+      time: "12.00",
+    });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div>
         <div className="Search">
@@ -43,41 +51,43 @@ export default function CurrentWeather() {
         </div>
         <div className="CurrentWeather row">
           <div className="col-5" id="search-city">
-            <h1 id="selected-city">Amsterdam</h1>
+            <h1 id="selected-city">{weatherData.city}</h1>
             <div className="row">
               <div className="col-12"></div>
               <div className="col-12">
                 {" "}
                 <span>Forecast last updated on </span>
-                <div id="current-date">Sunday, February 27</div>
+                <div id="current-date">{weatherData.date}</div>
               </div>
               <div className="col-12" id="current-time">
-                12.00
+                {weatherData.time}
               </div>
             </div>
           </div>
           <div className="col-5">
             <h1 className="weather-temperature">
-              <span id="current-temperature">{Math.round(temperature)}</span>{" "}
+              <span id="current-temperature">
+                {Math.round(weatherData.temperature)}
+              </span>{" "}
               <span className="units">°C</span>
             </h1>
             <div className="row">
-              <div className="col-12" id="forecast-description">
-                Clear sky
+              <div className="col-12 text-capitalize" id="forecast-description">
+                {weatherData.description}
               </div>
               <div className="col-12" id="humidity">
-                Humidity: 12%
+                Humidity: {weatherData.humidity}%
               </div>
               <div className="col-12" id="wind">
-                Wind: 1 m/s
+                Wind: {Math.round(weatherData.wind)} m/s
               </div>
             </div>
           </div>
           <div className="col-2">
             <img
               id="main-icon"
-              alt="weather forecast icon"
-              src={image01d}
+              alt={weatherData.description}
+              src={weatherData.iconUrl}
             ></img>
           </div>
         </div>
@@ -85,8 +95,7 @@ export default function CurrentWeather() {
     );
   } else {
     const apiKey = "bd2d78faf9d1acb5b346a3bce88defb1";
-    let city = "Amsterdam";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
     return "Loading...";
   }

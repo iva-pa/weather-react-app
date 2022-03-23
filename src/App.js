@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App wrap">
-      <CurrentWeather />
+      <CurrentWeather defaultCity="Amsterdam" />
       <br />
       <br />
       <HourlyForecast />

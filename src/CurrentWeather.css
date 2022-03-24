@@ -28,7 +28,7 @@
 .form-control {
   border-color: #5c5470;
 }
-.button-main {
+.btn-main {
   color: #352f44;
   background-color: white;
   border-color: #5c5470;
@@ -43,7 +43,7 @@
   user-select: none;
   padding: 6px 12px;
 }
-.button-main:hover {
+.btn-main:hover {
   color: #352f44;
   font-weight: 600;
   /* background-color: #dbd8e3; */

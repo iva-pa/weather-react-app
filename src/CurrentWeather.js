@@ -51,13 +51,13 @@ export default function CurrentWeather(props) {
                 />
               </div>
               <div className="col-2">
-                <input type="submit" value="Search" className="button-main" />
+                <input type="submit" value="Search" className="btn-main" />
               </div>
               <div className="col-2">
                 <input
                   type="submit"
                   value="Your location"
-                  className="button-main"
+                  className="btn-main"
                 />
               </div>
             </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import image01d from "./images/01d.png";
 import "./CurrentWeather.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function CurrentWeather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -15,8 +16,7 @@ export default function CurrentWeather(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       iconUrl: image01d,
-      date: "Sunday, February 27",
-      time: "12.00",
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -57,10 +57,9 @@ export default function CurrentWeather(props) {
               <div className="col-12">
                 {" "}
                 <span>Forecast last updated on </span>
-                <div id="current-date">{weatherData.date}</div>
-              </div>
-              <div className="col-12" id="current-time">
-                {weatherData.time}
+                <div>
+                  <FormattedDate date={weatherData.date} />
+                </div>
               </div>
             </div>
           </div>

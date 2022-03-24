@@ -31,18 +31,17 @@ export default function CurrentWeather(props) {
                   type="search"
                   className="form-control"
                   placeholder="Search Location"
-                  id="search-city-input"
                   autoComplete="off"
                 />
               </div>
               <div className="col-2">
-                <input type="submit" value="Search" className="btn btn-light" />
+                <input type="submit" value="Search" className="button-main" />
               </div>
               <div className="col-2">
                 <input
                   type="submit"
                   value="Your location"
-                  className="btn btn-light"
+                  className="button-main"
                   id="current-location"
                 />
               </div>

@@ -28,15 +28,25 @@
 .form-control {
   border-color: #5c5470;
 }
-.btn-light {
+.button-main {
   color: #352f44;
   background-color: white;
   border-color: #5c5470;
+  border: 1px solid;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  padding: 6px 12px;
 }
-.btn-light:hover {
+.button-main:hover {
   color: #352f44;
   font-weight: 600;
-  background-color: #dbd8e3;
+  /* background-color: #dbd8e3; */
   opacity: 90%;
   border-color: #352f44;
 }

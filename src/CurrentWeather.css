@@ -5,18 +5,14 @@
   text-decoration: none;
   color: white;
 }
-#main-icon {
-  width: 78px;
+.main-icon {
+  width: 120px;
   position: relative;
-  top: 18px;
+  right: 40px;
+  /* top: 18px; */
 }
-#selected-city {
-  text-transform: capitalize;
-}
-#forecast-description::first-letter {
-  text-transform: capitalize;
-}
-#forecast-description {
+
+.forecast-description {
   font-weight: 600;
   font-size: 18px;
 }
@@ -32,21 +28,10 @@
   color: #352f44;
   background-color: white;
   border-color: #5c5470;
-  border: 1px solid;
-  border-radius: 4px;
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  user-select: none;
-  padding: 6px 12px;
 }
 .btn-main:hover {
   color: #352f44;
   font-weight: 600;
-  /* background-color: #dbd8e3; */
   opacity: 0.9;
   border-color: #352f44;
 }

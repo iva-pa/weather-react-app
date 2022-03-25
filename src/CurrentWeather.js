@@ -16,7 +16,7 @@ export default function CurrentWeather(props) {
       city: response.data.name,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      iconUrl: image01d,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
     });
   }
@@ -51,13 +51,13 @@ export default function CurrentWeather(props) {
                 />
               </div>
               <div className="col-2">
-                <input type="submit" value="Search" className="btn-main" />
+                <input type="submit" value="Search" className="btn btn-main" />
               </div>
               <div className="col-2">
                 <input
                   type="submit"
                   value="Your location"
-                  className="btn-main"
+                  className="btn btn-main"
                 />
               </div>
             </div>

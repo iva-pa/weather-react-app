@@ -24,7 +24,7 @@ export default function CurrentWeatherInfo(props) {
             <span className="units">°C</span>
           </h1>
           <div className="row">
-            <div className="col-12 text-capitalize">
+            <div className="col-12 forecast-description text-capitalize">
               {props.data.description}
             </div>
             <div className="col-12">Humidity: {props.data.humidity}%</div>
@@ -34,7 +34,11 @@ export default function CurrentWeatherInfo(props) {
           </div>
         </div>
         <div className="col-2">
-          <img alt={props.data.description} src={props.data.iconUrl}></img>
+          <img
+            alt={props.data.description}
+            src={props.data.iconUrl}
+            className="main-icon"
+          ></img>
         </div>
       </div>
     </div>

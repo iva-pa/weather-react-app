@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import image01d from "./images/01d.png";
+// import image01d from "./images/01d.png";
+// import image01n from "./images/01n.png";
 import "./CurrentWeather.css";
 import axios from "axios";
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
@@ -17,6 +18,7 @@ export default function CurrentWeather(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      // iconUrl: `image${response.data.weather[0].icon}`,
       date: new Date(response.data.dt * 1000),
     });
   }

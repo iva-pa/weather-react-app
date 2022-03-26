@@ -1,11 +1,12 @@
 .detail-forecast {
-  padding: 10px 20px;
+  padding: 5px 20px;
 }
 .temperature {
   text-decoration: none;
   color: white;
 }
 .forecast-heading {
+  margin-top: 40px;
   text-align: left;
 }
 .forecast-temperature {

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import "./CurrentWeather.css";
 import axios from "axios";
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
+import HourlyForecast from "./HourlyForecast";
+import DailyForecast from "./DailyForecast";
 
 export default function CurrentWeather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -19,6 +21,7 @@ export default function CurrentWeather(props) {
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
   }
   function search() {
@@ -78,6 +81,8 @@ export default function CurrentWeather(props) {
           </form>
         </div>
         <CurrentWeatherInfo data={weatherData} />
+        <HourlyForecast coordinates={weatherData.coordinates} />
+        <DailyForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

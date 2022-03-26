@@ -1,6 +1,13 @@
 .detail-forecast {
   padding: 10px 20px;
 }
+
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -9px;
+}
+
 .temperature {
   text-decoration: none;
   color: white;

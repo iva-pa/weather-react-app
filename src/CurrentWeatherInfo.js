@@ -1,7 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
-import IMAGES from "./images/index";
+import IMAGES from "./images/images";
 
 export default function CurrentWeatherInfo(props) {
   return (

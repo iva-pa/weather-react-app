@@ -26,7 +26,7 @@ export default function DailyForecast(props) {
       </div>
     );
   } else {
-    const apiKey = "bd2d78faf9d1acb5b346a3bce88defb1";
+    const apiKey = "0b0a162599a84c98d6d90659f814988d";
     let latitude = props.coordinates.lat;
     let longitude = props.coordinates.lon;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;

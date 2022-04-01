@@ -4,12 +4,12 @@ import axios from "axios";
 import CurrentWeatherInfo from "./CurrentWeatherInfo";
 import HourlyForecast from "./HourlyForecast";
 import DailyForecast from "./DailyForecast";
+import Background from "./Background";
 
 export default function CurrentWeather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -78,6 +78,7 @@ export default function CurrentWeather(props) {
             </div>
           </form>
         </div>
+        <Background data={weatherData} />
         <CurrentWeatherInfo data={weatherData} />
         <HourlyForecast coordinates={weatherData.coordinates} />
         <DailyForecast coordinates={weatherData.coordinates} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Forecast.css";
 import axios from "axios";
 import HourlyForecastInfo from "./HourlyForecastInfo";
@@ -6,6 +6,10 @@ import HourlyForecastInfo from "./HourlyForecastInfo";
 export default function HourlyForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coorinates]);
 
   function handleResponse(response) {
     setForecast(response.data.hourly);

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import image01d from "./images/01d.png";
-// import image01n from "./images/01n.png";
 import "./CurrentWeather.css";
 import axios from "axios";
 import CurrentWeatherInfo from "./CurrentWeatherInfo";

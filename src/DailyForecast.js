@@ -21,11 +21,17 @@ export default function DailyForecast(props) {
         <h3 className="forecast-heading">Daily Forecast</h3>
         <br />
         <div className="forecast">
-          <DailyForecastInfo data={forecast[0]} />
-          <DailyForecastInfo data={forecast[1]} />
-          <DailyForecastInfo data={forecast[2]} />
-          <DailyForecastInfo data={forecast[3]} />
-          <DailyForecastInfo data={forecast[4]} />
+          {forecast.map(function(dailyForecast, index) {
+            if (index < 5) {
+              retunr(
+                <div key={index}>
+                  <DailyForecastInfo data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );

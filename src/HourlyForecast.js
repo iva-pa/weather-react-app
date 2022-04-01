@@ -22,11 +22,17 @@ export default function HourlyForecast(props) {
         <h3 className="forecast-heading">Hourly Forecast</h3>
         <br />
         <div className="forecast row">
-          <HourlyForecastInfo data={forecast[0]} />
-          <HourlyForecastInfo data={forecast[1]} />
-          <HourlyForecastInfo data={forecast[2]} />
-          <HourlyForecastInfo data={forecast[3]} />
-          <HourlyForecastInfo data={forecast[4]} />
+          {forecast.map(function(hourlyForecast, index) {
+            if (index < 5) {
+              return (
+                <div key={index}>
+                  <HourlyForecastInfo data={hourlyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );

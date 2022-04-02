@@ -1,3 +1,14 @@
+.wrap {
+  color: #020205;
+  max-width: 640px;
+  margin: 30px auto 0 auto;
+  padding: 15px 30px;
+  border: solid;
+  border-radius: 15px;
+  border-color: white;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
 .detail-forecast {
   padding: 10px 20px;
 }

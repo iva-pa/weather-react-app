@@ -10,23 +10,3 @@ h6 {
 h1 {
   font-weight: 900px;
 }
-.wrap {
-  color: #020205;
-  max-width: 640px;
-  margin: 30px auto 0 auto;
-  padding: 15px 30px;
-  border: solid;
-  border-radius: 15px;
-  border-color: white;
-  background-color: lightblue;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-}
-
-#forecast-description::first-letter {
-  text-transform: capitalize;
-}
-#forecast-description {
-  font-weight: 600;
-  font-size: 18px;
-}

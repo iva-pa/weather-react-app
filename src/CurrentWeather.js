@@ -52,6 +52,7 @@ export default function CurrentWeather(props) {
   if (weatherData.ready) {
     return (
       <div>
+        <Background data={weatherData.icon} />
         <div className="Search">
           <form onSubmit={handleSubmit}>
             <div className="row">
@@ -78,7 +79,7 @@ export default function CurrentWeather(props) {
             </div>
           </form>
         </div>
-        <Background data={weatherData.icon} />
+
         <CurrentWeatherInfo data={weatherData} />
         <HourlyForecast coordinates={weatherData.coordinates} />
         <DailyForecast coordinates={weatherData.coordinates} />

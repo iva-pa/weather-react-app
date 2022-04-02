@@ -9,7 +9,7 @@ export default function HourlyForecast(props) {
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.coorinates]);
+  }, [props.coordinates]);
 
   function handleResponse(response) {
     setForecast(response.data.hourly);
@@ -21,11 +21,11 @@ export default function HourlyForecast(props) {
       <div className="HourlyForecast">
         <h3 className="forecast-heading">Hourly Forecast</h3>
         <br />
-        <div className="forecast row">
+        <div className="row forecast">
           {forecast.map(function(hourlyForecast, index) {
             if (index < 5) {
               return (
-                <div key={index}>
+                <div className="col" key={index}>
                   <HourlyForecastInfo data={hourlyForecast} />
                 </div>
               );
@@ -37,7 +37,7 @@ export default function HourlyForecast(props) {
       </div>
     );
   } else {
-    const apiKey = "0b0a162599a84c98d6d90659f814988d";
+    const apiKey = "bd2d78faf9d1acb5b346a3bce88defb1";
     let latitude = props.coordinates.lat;
     let longitude = props.coordinates.lon;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;

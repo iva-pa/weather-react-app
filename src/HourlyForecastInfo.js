@@ -13,7 +13,7 @@ export default function HourlyForecastInfo(props) {
     return `${hour}:00`;
   }
   return (
-    <div className="col detail-forecast">
+    <div className="detail-forecast">
       <h5>{time()}</h5>
       <img src={IMAGES[props.data.weather[0].icon]} alt="" width="46" />
       <div className="forecast-temperature">{temperature()}</div>

@@ -78,7 +78,7 @@ export default function CurrentWeather(props) {
             </div>
           </form>
         </div>
-        <Background data={weatherData} />
+        <Background data={weatherData.icon} />
         <CurrentWeatherInfo data={weatherData} />
         <HourlyForecast coordinates={weatherData.coordinates} />
         <DailyForecast coordinates={weatherData.coordinates} />

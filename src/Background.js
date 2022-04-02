@@ -5,7 +5,7 @@ export default function Background(props) {
   return (
     <div
       style={{
-        backgroundImage: `url(${BACKGROUNDIMAGES[props.data.icon]})`,
+        backgroundImage: `url(${BACKGROUNDIMAGES[props.data]})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
